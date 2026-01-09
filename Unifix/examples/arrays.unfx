@@ -1,0 +1,58 @@
+# Unifix - Array/List Examples
+# Demonstrates array creation, indexing, and manipulation
+
+print "=== Array Examples ==="
+
+# Create arrays
+set fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+set numbers = [10, 20, 30, 40, 50]
+set mixed = [1, "hello", true, 3.14]
+
+# Access array elements
+print "First fruit: " + fruits[0]
+print "Second number: " + numbers[1]
+
+# Array length
+print "Number of fruits: " + len(fruits)
+
+# Loop through arrays
+print "All fruits:"
+set i = 0
+while i < len(fruits) {
+    print "  - " + fruits[i]
+    set i = i + 1
+}
+
+# Array operations
+set sum = 0
+set j = 0
+while j < len(numbers) {
+    set sum = sum + numbers[j]
+    set j = j + 1
+}
+print "Sum of numbers: " + sum
+
+# Find maximum
+set max_val = numbers[0]
+set k = 1
+while k < len(numbers) {
+    if numbers[k] > max_val {
+        set max_val = numbers[k]
+    }
+    set k = k + 1
+}
+print "Maximum value: " + max_val
+
+# Array with boolean values
+set flags = [true, false, true, true, false]
+set true_count = 0
+set m = 0
+while m < len(flags) {
+    if flags[m] {
+        set true_count = true_count + 1
+    }
+    set m = m + 1
+}
+print "Number of true values: " + true_count
+
+print "=== Array examples completed! ==="

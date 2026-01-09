@@ -1,0 +1,111 @@
+# Unifix - Complete Demo
+# Demonstrates all new features working together
+
+import unifixgame
+
+print "=== Unifix Complete Demo ==="
+print "This program demonstrates all new features!"
+
+# 1. Variables and arrays
+set player_name = "Hero"
+set health = 100
+set score = 0
+set level = 1
+set inventory = ["sword", "shield", "potion"]
+set position = [100, 200]
+
+print "Player: " + player_name
+print "Health: " + health
+print "Inventory: " + inventory
+
+# 2. Functions
+def calculate_damage(base_damage, multiplier) {
+    return base_damage * multiplier
+}
+
+def heal(amount) {
+    set health = health + amount
+    if health > 100 {
+        set health = 100
+    }
+    return health
+}
+
+# 3. Math functions
+set damage = calculate_damage(10, 1.5)
+print "Damage dealt: " + damage
+
+set new_health = heal(25)
+print "After healing: " + new_health
+
+# 4. While loops and conditionals
+set i = 0
+while i < 5 {
+    print "Round " + (i + 1) + ": Score = " + score
+    set score = score + 100
+    set i = i + 1
+}
+
+# 5. Advanced operators
+if score >= 500 and level >= 1 {
+    print "Player is powerful!"
+}
+
+if health == 100 or health >= 90 {
+    print "Health is excellent!"
+}
+
+# 6. String methods
+set welcome_message = "welcome to unifix"
+print "Uppercase: " + upper(welcome_message)
+print "Length: " + length(welcome_message)
+
+# 7. Graphics demonstration
+print ""
+print "Starting graphics demo..."
+
+unifixgame.window [600, 400]
+unifixgame.background "black"
+
+set angle = 0
+set shape_size = 30
+
+# Rotate and change colors
+set frame = 0
+while frame < 180 {  # 3 seconds at 60fps
+    unifixgame.clear
+    
+    # Calculate position
+    set rad = angle * (3.14159 / 180)
+    set draw_x = 300 + sin(angle) * 100
+    set draw_y = 200 + cos(angle) * 100
+    
+    # Draw based on position in cycle
+    if frame % 3 == 0 {
+        unifixgame.color "red"
+        unifixgame.setPosition [draw_x, draw_y]
+        unifixgame.circle shape_size
+    } else if frame % 3 == 1 {
+        unifixgame.color "green"
+        unifixgame.setPosition [draw_x, draw_y]
+        unifixgame.rectangle shape_size
+    } else {
+        unifixgame.color "blue"
+        unifixgame.setPosition [draw_x, draw_y]
+        unifixgame.triangle shape_size
+    }
+    
+    # Draw text
+    unifixgame.color "white"
+    unifixgame.setPosition [50, 50]
+    unifixgame.text "Score: " + score
+    
+    unifixgame.update
+    
+    set angle = angle + 2
+    set frame = frame + 1
+}
+
+print ""
+print "=== Demo completed successfully! ==="
+print "All Unifix features demonstrated!"

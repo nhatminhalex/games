@@ -1,0 +1,58 @@
+# Unifix - Graphics Examples
+# Demonstrates shapes, colors, and drawing operations
+
+import unifixgame
+
+print "=== Graphics Examples ==="
+
+# Create window
+unifixgame.window [800, 600]
+unifixgame.background "black"
+
+# Draw circle
+unifixgame.color "red"
+unifixgame.setPosition [100, 100]
+unifixgame.circle 50
+
+# Draw rectangle
+unifixgame.color "green"
+unifixgame.setPosition [300, 100]
+unifixgame.rectangle 80
+
+# Draw triangle
+unifixgame.color "blue"
+unifixgame.setPosition [500, 100]
+unifixgame.triangle 60
+
+# Draw text
+unifixgame.color "white"
+unifixgame.setPosition [100, 300]
+unifixgame.text "Hello Unifix!"
+
+# Draw lines
+unifixgame.color "yellow"
+unifixgame.setPosition [100, 400]
+unifixgame.line [200, 400]
+
+# Multiple shapes in a pattern
+set x = 50
+set y = 500
+set i = 0
+while i < 5 {
+    unifixgame.color ["red", "green", "blue", "yellow", "purple"][i]
+    unifixgame.setPosition [x, y]
+    unifixgame.circle 20
+    set x = x + 100
+    set i = i + 1
+}
+
+print "Graphics example completed! Window should display shapes."
+
+# Keep window open briefly
+set frame = 0
+while frame < 120 {
+    unifixgame.update
+    set frame = frame + 1
+}
+
+print "Window closed."

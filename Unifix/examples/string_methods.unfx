@@ -1,0 +1,75 @@
+# Unifix - String Methods Examples
+# Demonstrates: length, upper, lower, substring
+
+print "=== String Methods Examples ==="
+
+# Basic string operations
+set message = "Hello, Unifix Programming Language!"
+set empty = ""
+
+print "Original: " + message
+print "Length: " + length(message)
+
+# Upper and lower case
+set uppercase = upper(message)
+print "Uppercase: " + uppercase
+
+set lowercase = lower(message)
+print "lowercase: " + lowercase
+
+# Substring operations
+set part1 = substring(message, 0, 5)
+print "First 5 characters: " + part1
+
+set part2 = substring(message, 7)
+print "From character 7: " + part2
+
+set part3 = substring(message, 0, 14)
+print "Substring (0, 14): " + part3
+
+# Practical examples
+print ""
+print "=== Practical Examples ==="
+
+# Check string length
+set username = "unifix_user123"
+if length(username) >= 3 {
+    print "Username valid: " + username
+} else {
+    print "Username too short"
+}
+
+# Convert and compare
+set input1 = "ADMIN"
+set input2 = "admin"
+if upper(input2) == input1 {
+    print "Login successful (case-insensitive)"
+}
+
+# Extract parts of string
+set email = "user@example.com"
+set at_pos = 0  # We can't easily find position, so demonstrate substring
+set username_from_email = substring(email, 0, 4)
+print "Email prefix: " + username_from_email
+
+# Build strings
+set first_name = "John"
+set last_name = "Doe"
+set full_name = first_name + " " + last_name
+print "Full name: " + full_name
+print "Full name length: " + length(full_name)
+
+# String in array
+set words = ["unifix", "is", "fun"]
+set i = 0
+print "Array to sentence:"
+while i < len(words) {
+    if i > 0 {
+        print " "
+    }
+    print words[i]
+    set i = i + 1
+}
+
+print ""
+print "=== String methods examples completed! ==="

@@ -1,0 +1,38 @@
+# Interactive CS Lesson
+print "Welcome to the Unifix Logic Test!"
+ask "Enter a secret number:"
+set secret = last_input
+
+if secret > 10 {
+    print "That is a large number!"
+} else {
+    print "That is a small number."
+}
+
+print "Counting down..."
+repeat 3 {
+    print "..."
+}
+print "Go!"
+ask "What is 2 + 2?"
+set answer = last_input
+if answer == 4 {
+    print "Correct!"
+} else {
+    print "Incorrect, the answer is 4."
+}
+ask "What is the capital of France?"
+set answer = last_input
+if answer == "Paris" {
+    print "Correct!"
+} else {
+    print "Incorrect, the capital of France is Paris."
+}
+ask "Finally, what is 10 divided by 2?"
+set answer = last_input
+if answer == 5 {        
+    print "You got all the answers right!"
+} else {
+    print "The correct answer is 5."
+}
+print "Thanks for playing the Unifix Logic Test!"

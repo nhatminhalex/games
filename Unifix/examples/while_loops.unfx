@@ -1,0 +1,70 @@
+# Unifix - While Loop Examples
+# Demonstrates while loop syntax and usage
+
+print "=== While Loop Examples ==="
+
+# Basic while loop
+set counter = 1
+print "Counting from 1 to 5:"
+while counter <= 5 {
+    print "  " + counter
+    set counter = counter + 1
+}
+
+# While loop with countdown
+print "Countdown from 10 to 1:"
+set countdown = 10
+while countdown >= 1 {
+    print "  " + countdown
+    set countdown = countdown - 1
+}
+
+# While loop with complex condition
+print "Even numbers between 1 and 20:"
+set n = 2
+while n <= 20 {
+    print "  " + n
+    set n = n + 2
+}
+
+# While loop with break condition
+print "Finding first multiple of 7 greater than 50:"
+set search = 50
+while search < 100 {
+    if search % 7 == 0 {
+        print "  Found: " + search
+        set search = 100  # This will exit the loop
+    }
+    set search = search + 1
+}
+
+# Nested while loops
+print "Multiplication table (1-5):"
+set row = 1
+while row <= 5 {
+    set col = 1
+    set line = ""
+    while col <= 5 {
+        set product = row * col
+        set line = line + " " + product
+        set col = col + 1
+    }
+    print line
+    set row = row + 1
+}
+
+# While loop with arrays
+set words = ["unifix", "is", "awesome"]
+set idx = 0
+print "Building sentence:"
+set sentence = ""
+while idx < len(words) {
+    if idx > 0 {
+        set sentence = sentence + " "
+    }
+    set sentence = sentence + words[idx]
+    set idx = idx + 1
+}
+print "  " + sentence
+
+print "=== While loop examples completed! ==="

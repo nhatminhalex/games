@@ -1,0 +1,75 @@
+# Unifix - Advanced Operators Examples
+# Demonstrates new operators: >=, <=, !=, %, ^, and, or
+
+print "=== Advanced Operators Examples ==="
+
+# Comparison operators
+set a = 10
+set b = 5
+
+print "a = " + a + ", b = " + b
+print "a >= b: " + (a >= b)
+print "a <= b: " + (a <= b)
+print "a != b: " + (a != b)
+
+set c = 10
+print "a == c: " + (a == c)
+print "a != c: " + (a != c)
+
+# Modulo operator
+set x = 17
+set y = 5
+print "17 % 5 = " + (x % y)
+print "Even/Odd check: " + x + " is " + (x % 2 == 0 ? "even" : "odd")
+
+# Power operator
+set base = 2
+set exp = 8
+print "2^8 = " + (base ^ exp)
+print "3^3 = " + (3 ^ 3)
+print "10^2 = " + (10 ^ 2)
+
+# Boolean operators (and, or)
+set p = true
+set q = false
+
+print "p = true, q = false"
+print "p and q: " + (p and q)
+print "p or q: " + (p or q)
+print "not p: " + (not p)
+
+# Complex boolean expressions
+set age = 25
+set has_license = true
+
+print "Age: " + age + ", Has License: " + has_license
+print "Can drive (age >= 16 and has_license): " + (age >= 16 and has_license)
+
+set is_weekend = false
+set is_holiday = true
+print "Day off (weekend or holiday): " + (is_weekend or is_holiday)
+
+# Practical examples
+print ""
+print "=== Practical Examples ==="
+
+# Check if number is in range
+set num = 7
+set lower = 1
+set upper = 10
+print "Number " + num + " in range " + lower + "-" + upper + ": " + (num >= lower and num <= upper)
+
+# FizzBuzz-like logic
+set n = 15
+if n % 3 == 0 and n % 5 == 0 {
+    print "FizzBuzz"
+} else if n % 3 == 0 {
+    print "Fizz"
+} else if n % 5 == 0 {
+    print "Buzz"
+} else {
+    print n
+}
+
+print ""
+print "=== All operator examples completed! ==="

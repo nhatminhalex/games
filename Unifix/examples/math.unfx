@@ -1,0 +1,62 @@
+# Unifix - Built-in Functions Examples
+# Demonstrates: random, len, abs, round, floor, ceil, sqrt, sin, cos, tan
+
+print "=== Built-in Math Functions ==="
+
+# Random functions
+print "Random number (0-1): " + random()
+print "Random number (0-100): " + random(100)
+print "Random number (10-20): " + random(10, 20)
+
+# Absolute value
+print "abs(-5): " + abs(-5)
+print "abs(5): " + abs(5)
+print "abs(-3.14): " + abs(-3.14)
+
+# Rounding functions
+print "round(3.7): " + round(3.7)
+print "round(3.2): " + round(3.2)
+print "floor(3.7): " + floor(3.7)
+print "ceil(3.2): " + ceil(3.2)
+
+# Trigonometric functions (input in degrees)
+print ""
+print "=== Trigonometric Functions ==="
+print "sin(30): " + sin(30)
+print "cos(45): " + cos(45)
+print "tan(45): " + tan(45)
+
+# Square root
+print ""
+print "Square root examples:"
+print "sqrt(16): " + sqrt(16)
+print "sqrt(2): " + sqrt(2)
+print "sqrt(100): " + sqrt(100)
+
+# Practical applications
+print ""
+print "=== Practical Applications ==="
+
+# Random game score
+set score = random(0, 100)
+print "Game score: " + score
+
+# Calculate distance (hypotenuse)
+set a = 3
+set b = 4
+set distance = sqrt(a^a + b^b)
+print "Distance (3-4-5 triangle): " + distance
+
+# Calculate angle in degrees
+set opposite = 1
+set adjacent = 1
+set angle = tan(1) * (180 / 3.14159)  # Approximate
+print "Angle calculation: " + angle
+
+# Random dice roll
+set dice1 = random(1, 6)
+set dice2 = random(1, 6)
+print "Dice roll: " + dice1 + " + " + dice2 + " = " + (dice1 + dice2)
+
+print ""
+print "=== Math functions examples completed! ==="

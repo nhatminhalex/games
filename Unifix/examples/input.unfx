@@ -1,0 +1,67 @@
+# Unifix - Input Handling Examples
+# Demonstrates keyboard and mouse input
+
+import unifixgame
+
+print "=== Input Handling Examples ==="
+
+# Create window
+unifixgame.window [600, 400]
+unifixgame.background "black"
+
+set x = 300
+set y = 200
+
+print "Use arrow keys to move the square. Press ESC to quit."
+
+# Main game loop
+set running = true
+while running {
+    # Get keyboard input
+    unifixgame.getKey "left"
+    if __key__ {
+        set x = x - 5
+    }
+    
+    unifixgame.getKey "right"
+    if __key__ {
+        set x = x + 5
+    }
+    
+    unifixgame.getKey "up"
+    if __key__ {
+        set y = y - 5
+    }
+    
+    unifixgame.getKey "down"
+    if __key__ {
+        set y = y + 5
+    }
+    
+    # Get mouse position
+    unifixgame.getMouseX
+    unifixgame.getMouseY
+    unifixgame.mousePressed
+    
+    # Draw
+    unifixgame.clear
+    unifixgame.color "red"
+    unifixgame.setPosition [x, y]
+    unifixgame.rectangle 40
+    
+    # Draw mouse position indicator
+    unifixgame.color "green"
+    unifixgame.setPosition [__mouse_x__, __mouse_y__]
+    unifixgame.circle 10
+    
+    # Update display
+    unifixgame.update
+    
+    # Check for exit (simplified)
+    set frame = frame + 1
+    if frame > 600 {  # Run for about 10 seconds
+        set running = false
+    }
+}
+
+print "Input example completed!"
